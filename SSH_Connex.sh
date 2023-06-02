@@ -656,16 +656,20 @@ fi
 
 sleep 1
 
-# Instalación de hydra desde el repositorio GitHub
+# Verificar e instalar Hydra
 verificar_instalacion "Hydra" "git" "hydra"
+
 if ! command -v hydra >/dev/null 2>&1; then
+    echo -e "Instalando Hydra..."
+
     if sudo apt-get install -y build-essential libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev firebird-dev libmemcached-dev libgpg-error-dev libgcrypt20-dev; then
         if git clone https://github.com/vanhauser-thc/thc-hydra.git; then
-            cd thc-hydra
+            cd thc-hydra || exit
             ./configure
             make
             sudo make install
             cd ..
+            echo -e "${greenColour}✔${endColour} Hydra se ha instalado correctamente."
         else
             echo -e "${redColour}✘${endColour} Error al clonar el repositorio de Hydra desde GitHub."
         fi
@@ -673,6 +677,7 @@ if ! command -v hydra >/dev/null 2>&1; then
         echo -e "${redColour}✘${endColour} Error al instalar las dependencias requeridas para Hydra."
     fi
 fi
+
 
 # Menú principal
 intro_ssh_conex;
