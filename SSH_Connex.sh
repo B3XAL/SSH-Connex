@@ -567,13 +567,49 @@ $terminal -- sh -c "sudo hydra -vV -u -l '$username' -P '$password_list' -t 16 -
 
 verificar_instalacion() {
     nombre=$1
-    comando=$2
-    if command -v "$comando" >/dev/null 2>&1; then
+    paquete=$2
+    comando=$3
+
+    if [ -x "$(command -v "$comando")" ]; then
         echo -e "${greenColour}✔${endColour} $nombre está instalado."
     else
         echo -e "Instalando $nombre..."
-        sudo apt-get install -y "$comando"
-        echo -e "${greenColour}✔${endColour} $nombre se ha instalado correctamente."
+        
+        if command -v apt-get >/dev/null 2>&1; then
+            gestor_paquetes="apt-get"
+        elif command -v dnf >/dev/null 2>&1; then
+            gestor_paquetes="dnf"
+        elif command -v yum >/dev/null 2>&1; then
+            gestor_paquetes="yum"
+        else
+            echo -e "${redColour}✘${endColour} No se pudo determinar el gestor de paquetes."
+            return
+        fi
+        
+        if ! sudo "$gestor_paquetes" install -y "$paquete"; then
+            echo -e "${redColour}✘${endColour} Error al instalar $nombre."
+            return
+        fi
+
+        if [ -x "$(command -v "$comando")" ]; then
+            echo -e "${greenColour}✔${endColour} $nombre se ha instalado correctamente."
+        else
+            echo -e "${redColour}✘${endColour} Error al instalar $nombre."
+            return
+        fi
+    fi
+    
+    # Verificar y agregar la ruta del cliente SSH al $PATH si no está presente
+    if ! command -v ssh >/dev/null 2>&1; then
+        if [ -f "/etc/environment" ]; then
+            echo "export PATH=\$PATH:/usr/bin" | sudo tee -a /etc/environment >/dev/null
+            echo -e "Se ha agregado la ruta del cliente SSH al \$PATH."
+        elif [ -f "$HOME/.bashrc" ]; then
+            echo "export PATH=\$PATH:/usr/bin" >> "$HOME/.bashrc"
+            echo -e "Se ha agregado la ruta del cliente SSH al \$PATH."
+        else
+            echo -e "${redColour}✘${endColour} No se pudo agregar la ruta del cliente SSH al \$PATH."
+        fi
     fi
 }
 
@@ -596,18 +632,47 @@ mostrar_ayuda() {
 
 
 
-# Verificar herramientas
-verificar_instalacion "SSH" "ssh"
+# Verificación e instalación de git
+verificar_instalacion "Git" "git" "git"
+
+# Resto de las verificaciones e instalaciones
+verificar_instalacion "OpenSSH Client" "openssh-client" "ssh"
 sleep 1
-verificar_instalacion "Nmap" "nmap"
+verificar_instalacion "Nmap" "nmap" "nmap"
 sleep 1
-verificar_instalacion "Terminal GNOME" "gnome-terminal"
+verificar_instalacion "Terminal GNOME" "gnome-terminal" "gnome-terminal"
+
 sleep 1
-verificar_instalacion "ssh-keyscan" "ssh-keyscan"
+
+# Instalación de ssh-audit desde el repositorio GitHub
+verificar_instalacion "ssh-audit" "git" "ssh-audit"
+if ! command -v ssh-audit >/dev/null 2>&1; then
+    if git clone https://github.com/arthepsy/ssh-audit.git; then
+        sudo ln -s "$(pwd)/ssh-audit/ssh-audit.py" /usr/local/bin/ssh-audit
+    else
+        echo -e "${redColour}✘${endColour} Error al clonar el repositorio de ssh-audit desde GitHub."
+    fi
+fi
+
 sleep 1
-verificar_instalacion "ssh-audit" "ssh-audit"
-sleep 1
-verificar_instalacion "Hydra" "hydra"
+
+# Instalación de hydra desde el repositorio GitHub
+verificar_instalacion "Hydra" "git" "hydra"
+if ! command -v hydra >/dev/null 2>&1; then
+    if sudo apt-get install -y build-essential libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev firebird-dev libmemcached-dev libgpg-error-dev libgcrypt20-dev; then
+        if git clone https://github.com/vanhauser-thc/thc-hydra.git; then
+            cd thc-hydra
+            ./configure
+            make
+            sudo make install
+            cd ..
+        else
+            echo -e "${redColour}✘${endColour} Error al clonar el repositorio de Hydra desde GitHub."
+        fi
+    else
+        echo -e "${redColour}✘${endColour} Error al instalar las dependencias requeridas para Hydra."
+    fi
+fi
 
 # Menú principal
 intro_ssh_conex;
