@@ -53,23 +53,23 @@ Para utilizar SSH Connex, sigue estos pasos:
 
 Las opciones disponibles en el menú de la aplicación son:
 
-1. Conexión SSH con contraseña: Esta opción te permite establecer una conexión SSH utilizando una contraseña de autenticación.
+· Conexión SSH con contraseña: Esta opción te permite establecer una conexión SSH utilizando una contraseña de autenticación.
 
- 2.Conexión SSH con contraseña obteniendo shell en bash: Esta opción también establece una conexión SSH con contraseña, pero además obtiene un shell interactivo en el servidor remoto utilizando el intérprete de comandos Bash.
+· Conexión SSH con contraseña obteniendo shell en bash: Esta opción también establece una conexión SSH con contraseña, pero además obtiene un shell interactivo en el servidor remoto utilizando el intérprete de comandos Bash.
 
- 3.Conexión SSH con clave privada: Esta opción te permite establecer una conexión SSH utilizando una clave privada de autenticación.
+· Conexión SSH con clave privada: Esta opción te permite establecer una conexión SSH utilizando una clave privada de autenticación.
 
- 4.Conexión SSH con clave pública: Esta opción establece una conexión SSH utilizando una clave pública de autenticación.
+· Conexión SSH con clave pública: Esta opción establece una conexión SSH utilizando una clave pública de autenticación.
 
- 5.Conexión SSH con Hydra: Esta opción utiliza la herramienta Hydra para realizar un ataque de fuerza bruta en la autenticación SSH. Se intentarán diferentes combinaciones de usuarios y contraseñas para acceder al servidor remoto.
+· Conexión SSH con Hydra: Esta opción utiliza la herramienta Hydra para realizar un ataque de fuerza bruta en la autenticación SSH. Se intentarán diferentes combinaciones de usuarios y contraseñas para acceder al servidor remoto.
 
 Escaneo: Esta opción te permite realizar diferentes tipos de escaneos relacionados con SSH:
 
-1. Escaneo de puertos SSH: Realiza un escaneo de puertos en el servidor remoto para identificar los puertos SSH abiertos.
+· Escaneo de puertos SSH: Realiza un escaneo de puertos en el servidor remoto para identificar los puertos SSH abiertos.
 
-2. Escaneo de claves públicas SSH: Realiza un escaneo en busca de claves públicas SSH en el servidor remoto.
+· Escaneo de claves públicas SSH: Realiza un escaneo en busca de claves públicas SSH en el servidor remoto.
 
-3. Escaneo de ssh-audit: Utiliza la herramienta ssh-audit para realizar un escaneo de seguridad en el servidor SSH y obtener información sobre las configuraciones y vulnerabilidades.
+· Escaneo de ssh-audit: Utiliza la herramienta ssh-audit para realizar un escaneo de seguridad en el servidor SSH y obtener información sobre las configuraciones y vulnerabilidades.
 
 
 
