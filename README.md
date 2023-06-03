@@ -55,13 +55,13 @@ Las opciones disponibles en el menú de la aplicación son:
 
 1. Conexión SSH con contraseña: Esta opción te permite establecer una conexión SSH utilizando una contraseña de autenticación.
 
-2.Conexión SSH con contraseña obteniendo shell en bash: Esta opción también establece una conexión SSH con contraseña, pero además obtiene un shell interactivo en el servidor remoto utilizando el intérprete de comandos Bash.
+ 2.Conexión SSH con contraseña obteniendo shell en bash: Esta opción también establece una conexión SSH con contraseña, pero además obtiene un shell interactivo en el servidor remoto utilizando el intérprete de comandos Bash.
 
-3.Conexión SSH con clave privada: Esta opción te permite establecer una conexión SSH utilizando una clave privada de autenticación.
+ 3.Conexión SSH con clave privada: Esta opción te permite establecer una conexión SSH utilizando una clave privada de autenticación.
 
-4.Conexión SSH con clave pública: Esta opción establece una conexión SSH utilizando una clave pública de autenticación.
+ 4.Conexión SSH con clave pública: Esta opción establece una conexión SSH utilizando una clave pública de autenticación.
 
-5.Conexión SSH con Hydra: Esta opción utiliza la herramienta Hydra para realizar un ataque de fuerza bruta en la autenticación SSH. Se intentarán diferentes combinaciones de usuarios y contraseñas para acceder al servidor remoto.
+ 5.Conexión SSH con Hydra: Esta opción utiliza la herramienta Hydra para realizar un ataque de fuerza bruta en la autenticación SSH. Se intentarán diferentes combinaciones de usuarios y contraseñas para acceder al servidor remoto.
 
 Escaneo: Esta opción te permite realizar diferentes tipos de escaneos relacionados con SSH:
 
