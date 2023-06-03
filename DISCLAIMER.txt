@@ -1,0 +1,12 @@
+AVISO LEGAL
+
+El código fuente y los archivos asociados del proyecto SSH Connex se proporcionan tal cual, sin garantías de ningún tipo. El uso de este código es bajo su propia responsabilidad.
+
+Este proyecto se ha creado con el objetivo de trabajar y aumentar los conocimientos en el ámbito de las conexiones SSH. No se promueve ni se respalda el uso indebido o malintencionado de este código.
+
+El autor y los colaboradores del proyecto no se hacen responsables de cualquier daño, pérdida o consecuencia derivada del uso de este código en cualquier forma.
+
+Utilice este proyecto de manera responsable y ética. Asegúrese de cumplir con las leyes y regulaciones aplicables al utilizar este código.
+
+Recuerde que el conocimiento y la tecnología deben utilizarse para el bien común y el beneficio de todos.
+
