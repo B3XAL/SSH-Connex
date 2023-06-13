@@ -1,90 +1,134 @@
-# SSH Connex
+<div align="center">
+  <img src="https://github.com/B3XAL/SSH-Connex/blob/5441cb8f374a215bdfa6a3d84b76a70e57449fb7/ssh.JPG" alt="SSH-Connex">
+</div>
+<br>
+<p align="center">
+  <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/Git-2C363F?style=for-the-badge&logo=git&logoColor=F05032" alt="Git"></a>
+  <a href="https://www.openssh.com/"><img src="https://img.shields.io/badge/OpenSSH-000000?style=for-the-badge&logo=OpenSSH&logoColor=FFFFFF" alt="OpenSSH"></a>
+  <a href="https://nmap.org/"><img src="https://img.shields.io/badge/Nmap-000000?style=for-the-badge&logo=nmap&logoColor=DC572E" alt="Nmap"></a>
+  <a href="https://help.gnome.org/users/gnome-terminal/stable/"><img src="https://img.shields.io/badge/Terminal%20Gnome-2C3539?style=for-the-badge&logo=gnome&logoColor=FFFFFF" alt="Terminal Gnome"></a>
+  <a href="https://github.com/arthepsy/ssh-audit"><img src="https://img.shields.io/badge/ssh--audit-000000?style=for-the-badge&logo=OpenSSH&logoColor=FFFFFF" alt="ssh-audit"></a>
+</p>
+<!-- <br> -->
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License">
+  <img src="https://img.shields.io/badge/Version-1.0-green.svg" alt="Version">
+</p>
+<br>
 
-## Descripción
+### ***Índice***
 
-SSH Connex es una herramienta de línea de comandos escrita en Bash que simplifica y automatiza la conexión segura a servidores SSH. Esta herramienta se desarrolló con el propósito de agilizar el proceso de conexión y permitir la ejecución de tareas comunes en entornos de red de forma más eficiente.
+* [Descripción del proyecto](#descripción)
+* [Instalación local de SSH_Connex](#instalación-local-de-ssh_connex)
+* [Ejemplos de uso](#ejemplos-de-uso)
+* [Desarrolladoras del proyecto](#desarrolladoras-del-proyecto)
+* [Tecnologías utilizadas](#tecnologías-utilizadas)
+* [Licencia](#licencia)
 
-Algunas de las motivaciones detrás de este proyecto son:
 
-- Simplificar el proceso de conexión a servidores SSH.
-- Proporcionar una interfaz intuitiva y fácil de usar.
-- Automatizar tareas comunes en entornos de red.
+<br>
 
-El principal problema que resuelve SSH Connex es eliminar la necesidad de recordar y escribir comandos largos y complicados cada vez que se desea establecer una conexión SSH. Con esta herramienta, los usuarios pueden guardar las configuraciones de conexión y acceder rápidamente a ellas cuando sea necesario.
+## ***Descripción***
 
-A lo largo del desarrollo de este proyecto, se aprendió sobre:
+Ssh connex es una herramienta de línea de comandos escrita en bash que simplifica y automatiza la conexión segura a servidores ssh.
 
-- La utilización de Bash para crear scripts de línea de comandos.
-- La interacción con servidores SSH de forma segura.
-- La automatización de tareas a través de scripts.
+El desarrollo de ssh connex se basó en la necesidad de simplificar el proceso de conexión a servidores ssh y proporcionar a los usuarios una interfaz intuitiva y fácil de usar.
 
-## Índice
+Los usuarios pueden guardar las configuraciones de conexión con el comando   ```shell -g <hostname/IP> ```   y acceder rápidamente a ellas eliminando la necesidad de recordar y escribir comandos largos y complicados cada vez que deseen establecer una conexión ssh.
 
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Créditos](#créditos)
-- [Licencia](#licencia)
+Durante el desarrollo de este proyecto (realizado como parte de mi trabajo de fin de Master en [TssCiberseguridad](https://tssciberseguridad.com/)) adquirí conocimientos sobre la creación de scripts de línea de comandos en bash, la interacción segura con servidores ssh y la automatización de tareas mediante scripts. Además tuve la oportunidad de aprender en profundidad los conceptos relacionados con la seguridad en las conexiones ssh y la gestión de claves públicas y privadas.
+<br>
+<br>
 
-## Instalación
+### ***Instalación local de SSH_Connex***
 
-¿Cuáles son los pasos necesarios para instalar tu proyecto? Proporciona una descripción paso a paso de cómo poner en funcionamiento el entorno de desarrollo.
+Construir y ejecutar SSH-Connex es muy fácil. Asegúrese de tener instalados [ Git ](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Instalaci%C3%B3n-de-Git), y siga las instrucciones que se indican a continuación. 
 
-Clona este repositorio en tu máquina local
+ 1. Clona este repositorio en tu máquina local
 ```shell
 git clone https://github.com/B3XAL/SSH-Connex.git
  ```
-Navega al directorio del proyecto
+ <br>
+ 
+ 2. Navega al directorio del proyecto
 ```shell
 cd SSH-Connex
 ```
-Ejecuta el script SSH_Connex.sh para iniciar la herramienta
+<br>
+
+ 3. Ejecuta el script SSH_Connex.sh para iniciar la herramienta
 ```shell
 sudo ./SSH_Connex.sh
 ```
+<br>
 
-## Uso
+## Ejemplos de uso
 
-Para utilizar SSH Connex, sigue estos pasos:
+Al ejecutar SSH-Connex, se realizará de foma automática una verificación de todas las dependecias necesarias con las que se trabaja.
+Así mismo, en caso de que alguna de las dependencias no esté instalada, se procederá a su instalación de forma automática.
 
-1. Ejecuta el script ` sudo SSH_Connex.sh`.
-2. Sigue las instrucciones en pantalla para seleccionar una configuración de conexión o agregar una nueva.
-3. Ingresa tus credenciales de autenticación cuando se te solicite.
-4. Una vez conectado, podrás ejecutar comandos y realizar tareas en el servidor SSH remoto.
+- ✔️ Git
+- ✔️ OpenSSH
+- ✔️ Nmap
+- ✔️ Terminal Gnome
+- ✔️ ssh-audit
 
-Las opciones disponibles en el menú de la aplicación son:
+Una vez verifcado todo entraremos al menú.
+<p align="center">
+  <img src="https://github.com/B3XAL/SSH-Connex/blob/9efaaa986697d725fe01481a0fc6fd54173df9cd/Men%C3%BA.JPG" alt="SSH-Connex Menú">
+</p>
 
-· Conexión SSH con contraseña: Esta opción te permite establecer una conexión SSH utilizando una contraseña de autenticación.
+<br>
 
-· Conexión SSH con contraseña obteniendo shell en bash: Esta opción también establece una conexión SSH con contraseña, pero además obtiene un shell interactivo en el servidor remoto utilizando el intérprete de comandos Bash.
+* Conexión SSH con contraseña:
 
-· Conexión SSH con clave privada: Esta opción te permite establecer una conexión SSH utilizando una clave privada de autenticación.
+1. Te solicitará ingresar el nombre de host o la dirección IP a la cual deseas conectarte. Puedes ingresar, por ejemplo, `nmap.org` o la dirección IP específica, como `45.33.49.119`. 
 
-· Conexión SSH con clave pública: Esta opción establece una conexión SSH utilizando una clave pública de autenticación.
+2. Te pedirá que ingreses el nombre de usuario correspondiente de la cuenta que deseas acceder a través de la conexión SSH.
 
-· Conexión SSH con Hydra: Esta opción utiliza la herramienta Hydra para realizar un ataque de fuerza bruta en la autenticación SSH. Se intentarán diferentes combinaciones de usuarios y contraseñas para acceder al servidor remoto.
+3. Finalmente, te solicitará que especifiques el puerto al cual deseas conectarte.
 
-Escaneo: Esta opción te permite realizar diferentes tipos de escaneos relacionados con SSH:
+<p align="center">
+  <img src="https://github.com/B3XAL/SSH-Connex/blob/a72c6c684bfd97fd055c62093450666ea8870ec7/Conexion%20ssh1.JPG" alt="SSH Contraseña">
+</p>
 
-· Escaneo de puertos SSH: Realiza un escaneo de puertos en el servidor remoto para identificar los puertos SSH abiertos.
+> En la foto dada se realiza un ejemplo del cambio de usuario y puerto predeterminado con el comando `-g`.
 
-· Escaneo de claves públicas SSH: Realiza un escaneo en busca de claves públicas SSH en el servidor remoto.
+<br>
+<br>
 
-· Escaneo de ssh-audit: Utiliza la herramienta ssh-audit para realizar un escaneo de seguridad en el servidor SSH y obtener información sobre las configuraciones y vulnerabilidades.
+* Conexión SSH con contraseña obteniendo una shell en bash:
+
+La diferencia la opción anterior es que, una vez autenticados, se nos proporciona una shell para operar inmediatamente en el servidor.
+<p align="center">
+  <img src="https://github.com/B3XAL/SSH-Connex/blob/0d171c1ae302eb35d9032e1cb37faea2a2c8868c/shell.JPG" alt="SSH Shell">
+</p>
+
+> Parece que se ha quedad congelado pero en realidad estás dentro (si has introducido bien la contraseña).
+
+<br>
+<br>
+
+* Conexión SSH con claves privadas:
+
+:construction: Proyecto en construcción :construction:
+
+<br>
+<br>
 
 
-
-## Créditos
+## Desarrolladoras del proyecto
 
 Desarrollador: B3XAL
 
-Herramientas usadas:
+## Tecnologías utilizadas
 
-- Git Herramienta de control de versiones utilizada en el proyecto.
-- OpenSSH Client: Cliente OpenSSH utilizado para la conexión SSH.
-- Nmap: Herramienta de escaneo de red utilizada en el proyecto.
-- Terminal GNOME: Terminal GNOME utilizado en el proyecto.
-- ssh-audit: Herramienta utilizada para auditar la seguridad de SSH.
-- Hydra: Herramienta de fuerza bruta utilizada en el proyecto.
+- ✔️ Git Herramienta de control de versiones utilizada en el proyecto.
+- ✔️ OpenSSH Client: Cliente OpenSSH utilizado para la conexión SSH.
+- ✔️ Nmap: Herramienta de escaneo de red utilizada en el proyecto.
+- ✔️ Terminal GNOME: Terminal GNOME utilizado en el proyecto.
+- ✔️ ssh-audit: Herramienta utilizada para auditar la seguridad de SSH.
+- ✔️ Hydra: Herramienta de fuerza bruta utilizada en el proyecto.
 
 
 ## Licencia
