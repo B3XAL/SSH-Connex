@@ -21,7 +21,8 @@
 * [Descripción del proyecto](#descripción)
 * [Instalación local de SSH_Connex](#instalación-local-de-ssh_connex)
 * [Ejemplos de uso](#ejemplos-de-uso)
-* [Desarrolladoras del proyecto](#desarrolladoras-del-proyecto)
+* [Ayuda dentro del programa](#ayuda-dentro-del-programa)
+* [Desarrollador del proyecto](#desarrollador-del-proyecto)
 * [Tecnologías utilizadas](#tecnologías-utilizadas)
 * [Licencia](#licencia)
 
@@ -58,13 +59,13 @@ cd SSH-Connex
 
  3. Ejecuta el script SSH_Connex.sh para iniciar la herramienta
 ```shell
-sudo ./SSH_Connex.sh
+sudo bash SSH_Connex.sh
 ```
 <br>
 
 ## Ejemplos de uso
 
-Al ejecutar SSH-Connex, se realizará de foma automática una verificación de todas las dependecias necesarias con las que se trabaja.
+Al ejecutar SSH-Connex, se realizará de forma automática una verificación de todas las dependecias necesarias con las que se trabaja.
 Así mismo, en caso de que alguna de las dependencias no esté instalada, se procederá a su instalación de forma automática.
 
 - ✔️ Git
@@ -80,7 +81,7 @@ Una vez verifcado todo entraremos al menú.
 
 <br>
 
-* Conexión SSH con contraseña:
+* ***Conexión SSH con contraseña:***
 
 1. Te solicitará ingresar el nombre de host o la dirección IP a la cual deseas conectarte. Puedes ingresar, por ejemplo, `nmap.org` o la dirección IP específica, como `45.33.49.119`. 
 
@@ -97,29 +98,81 @@ Una vez verifcado todo entraremos al menú.
 <br>
 <br>
 
-* Conexión SSH con contraseña obteniendo una shell en bash:
+* ***Conexión SSH con contraseña obteniendo una shell en bash:***
 
-La diferencia la opción anterior es que, una vez autenticados, se nos proporciona una shell para operar inmediatamente en el servidor.
+La diferencia con la opción anterior es que, una vez autenticados, se nos proporciona una shell para operar inmediatamente en el servidor.
 <p align="center">
   <img src="https://github.com/B3XAL/SSH-Connex/blob/0d171c1ae302eb35d9032e1cb37faea2a2c8868c/shell.JPG" alt="SSH Shell">
 </p>
 
-> Parece que se ha quedad congelado pero en realidad estás dentro (si has introducido bien la contraseña).
+> Parece que se ha quedado congelado pero en realidad estás dentro (si has introducido bien la contraseña).
 
 <br>
 <br>
 
-* Conexión SSH con claves privadas:
+* ***Conexión SSH con claves privadas:***
 
-:construction: Proyecto en construcción :construction:
+Para utilizar este método, es necesario contar con un archivo de texto `(.txt)` que contenga las claves privadas de conexión SSH. 
+SSH-Conex te pedirá que especifiques la ruta de este archivo para establecer la conexión con el servidor.
+
+<p align="center">
+  <img src="https://github.com/B3XAL/SSH-Connex/blob/202ac767737ae6f9c724c4a26fd5c22b65056741/privadas.JPG" alt="SSH Claves privadas">
+</p>
+
+<br>
+<br>
+
+* ***Conexión SSH con Hydra:***
+
+En este apartado, utilizaremos Hydra, una herramienta de fuerza bruta que nos permite probar múltiples combinaciones de contraseñas de un diccionario contra un servidor SSH.
+Al igual qu en otros ocasiones, nos pedirá ingresar la dirección IP, nombre de usuario y puerto. Además, deberás tener a mano la ruta del diccionario para poder proporcionarla a Hydra.
+<p align="center">
+  <img src="https://github.com/B3XAL/SSH-Connex/blob/202ac767737ae6f9c724c4a26fd5c22b65056741/hydra.JPG" alt="SSH Claves privadas">
+</p>
+
+<br> 
+
+Una vez que se ejecute el proceso, Hydra se encargará de probar las contraseñas automáticamente. 
+Si alguna coincidencia es encontrada en el diccionario, SSH-Connex te informará y resaltará la contraseña correspondiente en verde para facilitar su identificación.
+
+<p align="center">
+  <img src="https://github.com/B3XAL/SSH-Connex/blob/ec2dc248a9edb7a44396c0e72c66645006c51327/Contrae%C3%B1aOK.JPG" alt="SSH Claves privadas">
+</p>
+
+<br>
+
+***En los submenús de escaneo, podrás encontrar información relevante como:***
+
+- Versiones y puertos
+- Huellas digitales 
+- Claves públicas
+
+<br>
+
+## Ayuda dentro del programa
+
+Aunque el programa es bastante intuitivo, si deseas obtener más información sobre cómo utilizar la funcionalidad de cambio de usuarios predeterminados en esta herramienta, 
+simplemente ingresa uno de los siguientes comandos:
+
+- `?`
+- `help`
+- `-h`
+
+Al introducirlos en la línea de comandos (*estando en el menú*), se mostrará una breve explicación que te guiará sobre cómo utilizar esta característica.
+
+<p align="center">
+  <img src="https://github.com/B3XAL/SSH-Connex/blob/4737b9fc29a29f076aa72632fbb2016d4c26928f/-h.JPG" alt="-h ayuda">
+</p>
 
 <br>
 <br>
 
 
-## Desarrolladoras del proyecto
+## Desarrollador del proyecto
 
-Desarrollador: B3XAL
+Desarrollador: &nbsp;  [![GitHub](https://img.shields.io/badge/GitHub-B3XAL-red?style=plastic&logo=github)](https://github.com/B3XAL)
+
+<br>
 
 ## Tecnologías utilizadas
 
@@ -130,6 +183,7 @@ Desarrollador: B3XAL
 - ✔️ ssh-audit: Herramienta utilizada para auditar la seguridad de SSH.
 - ✔️ Hydra: Herramienta de fuerza bruta utilizada en el proyecto.
 
+<br>
 
 ## Licencia
 
