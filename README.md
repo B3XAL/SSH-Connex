@@ -65,7 +65,7 @@ sudo bash SSH_Connex.sh
 
 ## Ejemplos de uso
 
-Al ejecutar SSH-Connex, se realizará de forma automática una verificación de todas las dependecias necesarias con las que se trabaja.
+Al ejecutar SSH-Connex, se realizará de forma automática una verificación de todas las dependencias necesarias con las que se trabaja.
 Así mismo, en caso de que alguna de las dependencias no esté instalada, se procederá a su instalación de forma automática.
 
 - ✔️ Git
