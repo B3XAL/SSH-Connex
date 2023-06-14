@@ -176,12 +176,12 @@ Desarrollador: &nbsp;  [![GitHub](https://img.shields.io/badge/GitHub-B3XAL-red?
 
 ## Tecnologías utilizadas
 
-- ✔️ Git Herramienta de control de versiones utilizada en el proyecto.
+- ✔️ Git Herramienta de control de versiones.
 - ✔️ OpenSSH Client: Cliente OpenSSH utilizado para la conexión SSH.
-- ✔️ Nmap: Herramienta de escaneo de red utilizada en el proyecto.
-- ✔️ Terminal GNOME: Terminal GNOME utilizado en el proyecto.
+- ✔️ Nmap: Herramienta de escaneo de red.
+- ✔️ Terminal GNOME: Terminal GNOME.
 - ✔️ ssh-audit: Herramienta utilizada para auditar la seguridad de SSH.
-- ✔️ Hydra: Herramienta de fuerza bruta utilizada en el proyecto.
+- ✔️ Hydra: Herramienta de fuerza bruta.
 
 <br>
 
