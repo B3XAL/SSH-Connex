@@ -74,7 +74,7 @@ Así mismo, en caso de que alguna de las dependencias no esté instalada, se pro
 - ✔️ Terminal Gnome
 - ✔️ ssh-audit
 
-Una vez verifcado todo entraremos al menú.
+Una vez verificado todo entraremos al menú.
 <p align="center">
   <img src="https://github.com/B3XAL/SSH-Connex/blob/9efaaa986697d725fe01481a0fc6fd54173df9cd/Men%C3%BA.JPG" alt="SSH-Connex Menú">
 </p>
