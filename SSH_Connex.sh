@@ -275,7 +275,7 @@ function nmap_port_scan_ssh() {
     # Ejecutar el escaneo de puertos con nmap en una terminal Gnome separada
     echo -e "\nRealizando escaneo de puertos en $hostname..."
 
-    gnome-terminal -- bash -c "sudo nmap -Pn -n -vvv -p $port_range -sV --script 'ssh* and not (sshv1 or ssh2-enum-algos)' $hostname -oN $temp_file; echo 'El escaneo de Nmap ha finalizado. Presiona Enter para continuar...'; read"
+    gnome-terminal -- bash -c "sudo nmap --script=firewall-bypass -Pn -n -p $port_range --open --script 'ssh2-enum-algos' $hostname -oN $temp_file; echo 'El escaneo de Nmap ha finalizado. Presiona Enter para continuar...'; read"
 
     # Esperar a que el escaneo de nmap en la terminal Gnome separada termine
     read -p "Presiona Enter cuando el escaneo haya finalizado..."
