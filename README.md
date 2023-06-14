@@ -125,7 +125,7 @@ SSH-Conex te pedirá que especifiques la ruta de este archivo para establecer la
 * ***Conexión SSH con Hydra:***
 
 En este apartado, utilizaremos Hydra, una herramienta de fuerza bruta que nos permite probar múltiples combinaciones de contraseñas de un diccionario contra un servidor SSH.
-Al igual qu en otros ocasiones, nos pedirá ingresar la dirección IP, nombre de usuario y puerto. Además, deberás tener a mano la ruta del diccionario para poder proporcionarla a Hydra.
+Al igual que en otras ocasiones, nos pedirá ingresar la dirección IP, nombre de usuario y puerto. Además, deberás tener a mano la ruta del diccionario para poder proporcionarla a Hydra.
 <p align="center">
   <img src="https://github.com/B3XAL/SSH-Connex/blob/202ac767737ae6f9c724c4a26fd5c22b65056741/hydra.JPG" alt="SSH Claves privadas">
 </p>
